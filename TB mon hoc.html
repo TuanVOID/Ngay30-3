@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TB mon</title>
+</head>
+<body>
+Nhập điểm 3 môn Toán, Lý, Hóa
+<br>
+<br>
+<input type="number" placeholder="Toan" id="dt">
+<input type="number" placeholder="Ly" id="dl">
+<input type="number" placeholder="Hoa" id="dh">
+<button onclick="diemtb()">Xep hang</button>
+<p id="in"></p>
+<script>
+    function diemtb() {
+        let diemtoan = +(document.getElementById("dt").value)
+        let diemly = +(document.getElementById("dl").value)
+        let diemhoa = +(document.getElementById("dh").value)
+        if (diemtoan>10) {
+            alert("Nhập lại điểm")
+        } else if (diemly>10) {
+            alert("Nhập lại điểm")
+        } else if (diemhoa>10) {
+            alert("Nhập lại điểm")
+        } else {
+            let trungbinh = (diemtoan + diemly + diemhoa) / 3
+            if (trungbinh >= 8) {
+                document.getElementById("in").innerHTML="Điểm trung bình của bạn là " + trungbinh + " . Bạn đạt hạng giỏi"
+            }   else if (trungbinh >= 6.5) {
+                document.getElementById("in").innerHTML="Điểm trung bình của bạn là " + trungbinh + " . Bạn đạt hạng khá"
+            } else {
+                document.getElementById("in").innerHTML="Điểm trung bình của bạn là " + trungbinh + " . Bạn đạt hạng trung bình"
+            }
+        }
+    }
+</script>
+</body>
+</html>
